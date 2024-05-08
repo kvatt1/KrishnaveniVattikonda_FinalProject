@@ -37,11 +37,6 @@ export default{
   async created(){
       this.medicines = await this.fetchmedicines();
   }
-
-  // data() => this.data medicines
-  // method => this.method => fetchmedicine
-  // life cycle hooks created() => call our method here
-
 }
 </script>
 

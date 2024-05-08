@@ -1,22 +1,13 @@
 <template>
     <div class="card">   
     <div>
-        <h2>{{medicine.name}}</h2>    
-        <div v-if="readMoreActivated">
+        <h2>{{medicine.name}}</h2>   
         <p>{{medicine.category}}</p> 
         <p>Barcode : {{medicine.barcode}}</p>        
         <p>Weight : {{medicine.weight}}</p>
         <h4><p>Price : ${{medicine.price}}</p></h4>
         <p> Expiry : {{new Date(medicine.exp_date).getFullYear()}} </p>
-        </div>
-
-        <!-- Display the "Read More" link if readMoreActivated is false -->
-        <a v-if="!readMoreActivated" @click="activateReadMore" href="#">... Read More</a>
-
-        <!-- Display the "Less More" link if readMoreActivated is true -->
-        <a v-if="readMoreActivated" @click="activateLessMore" href="#">... Less More</a>   
-    </div>   
-
+    </div> 
     <img :src="medicine.img" alt="medicine" />        
     </div>
    
@@ -29,19 +20,7 @@ export default{
     props:{
             medicine: Object
         },
-        data(){
-            return{
-                readMoreActivated: false          
-        }
-        },
-        methods: {
-            activateReadMore(){
-                this.readMoreActivated = true;
-            },
-            activateLessMore(){
-                this.readMoreActivated = false;
-            },
-        }
+     
 }
 </script>
 
@@ -60,7 +39,7 @@ div{
     color: blue;
     padding: 1em;
     text-align: center;
-    width: 80%;
+    width: 45%;
     margin: auto;
 }
 
@@ -89,7 +68,7 @@ a:visited,
 a:active,
 a:hover{
     text-decoration: none;
-    color: #00000;
+    color: #000000;
 }
 
 </style>
